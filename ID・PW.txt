@@ -1,0 +1,16 @@
+【AWSアカウント】
+PW：B1w41074!
+
+ IAMユーザー
+ https://udemy20210906.signin.aws.amazon.com/console
+ アカウントID：647343325728
+ udemy20210906
+ ID：udemy
+ PW：B1w41074@
+
+【GitHub】
+https://github.com/MinoriShimizu/rails-tutorial
+UserName：MinoriShimizu
+PW：b1w41074
+
+
