@@ -1,2 +1,1 @@
-# rails-tutorial
-rails-tutorial
+# Javaコース
