@@ -12,7 +12,9 @@ CREATE TABLE movies (
 
 CREATE TABLE favorites (
    id int unsigned AUTO_INCREMENT,
-   movie_id int NOT NULL,
+   movie_id int,
+   movie_category VARCHAR(100),
+   movie_name VARCHAR(100),
    watched_at DATE NOT NULL,
    comment VARCHAR(100),
    PRIMARY KEY(id)
@@ -24,4 +26,4 @@ INSERT INTO movies (category, name, director, released_at) VALUES ("アニメ", 
 INSERT INTO movies (category, name, director, released_at) VALUES ("アニメ",     "カラフル",             "原恵一",               '2010-08-21');
 
 
-INSERT INTO favorites (movie_id, watched_at, comment) VALUES (3,      '2011-10-16',    "大好きな小説の映画化");
+INSERT INTO favorites (movie_id, movie_category, movie_name, watched_at, comment) VALUES (3,   "アニメ",     "カラフル",      '2011-10-16',    "大好きな小説の映画化");
