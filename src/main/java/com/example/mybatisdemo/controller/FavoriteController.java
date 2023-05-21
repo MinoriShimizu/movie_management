@@ -15,7 +15,7 @@ public class FavoriteController {
     private FavoriteService favoriteService;
 
     @GetMapping("/favorites")
-    public List<Favorite> findAll() {
-        return favoriteService.findAll();
+    public List<FavoriteResponse> findAll() {
+        return favoriteService.findAll().stream().map(FavoriteResponse::new).toList();
     }
 }
