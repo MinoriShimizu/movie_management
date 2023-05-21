@@ -14,7 +14,6 @@
 
     <select id="findAll" resultMap="findAll">
         SELECT
-            favorites.id,
             favorites.movie_id,
             movies.category,
             movies.name,
