@@ -12,6 +12,7 @@
         <result property="name" column="name" />
     </resultMap>
 
+    <!-- findAll -->
     <select id="findAll" resultMap="findAll">
         SELECT
             favorites.movie_id,
@@ -25,4 +26,31 @@
             movies
                ON  favorites.movie_id = movies.movie_id
     </select>
+
+    <!-- create -->
+    <insert id="create">
+        INSERT INTO favorites(
+            movie_id,
+            movie_category,
+            movie_name,
+            watched_at,
+            comment
+        )
+        VALUES(
+            (SELECT
+                movie_id
+            FROM
+                movies
+            WHERE
+                name = #{movie_name}),
+            (SELECT
+                category
+            FROM
+                 movies
+            WHERE
+                name = #{movie_name}),
+            #{movie_name},
+            #{watched_at},
+            #{comment})
+    </insert>
 </mapper>

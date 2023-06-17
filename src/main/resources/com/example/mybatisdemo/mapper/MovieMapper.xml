@@ -11,4 +11,24 @@
     <select id="findAll" resultMap="findAll">
         select * from movies
     </select>
+
+    <select id="findByName">
+        SELECT * FROM movies WHERE name = #{name}
+    </select>
+
+
+    <insert id="create">
+        INSERT INTO movies(
+        category,
+        name,
+        director,
+        released_at
+        )
+        VALUES(
+        #{category},
+        #{name},
+        #{director},
+        #{released_at}
+        )
+    </insert>
 </mapper>
