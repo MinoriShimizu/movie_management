@@ -1,5 +1,6 @@
 package com.example.mybatisdemo.service;
 
+import com.example.mybatisdemo.controller.FavoriteRequest;
 import com.example.mybatisdemo.mapper.FavoriteMapper;
 import com.example.mybatisdemo.model.Favorite;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +17,10 @@ public class FavoriteServiceImpl implements FavoriteService {
     public List<Favorite> findAll() {
         return favoriteMapper.findAll();
 
+    }
+
+    public FavoriteRequest create(FavoriteRequest favoriteRequest) {
+        favoriteMapper.create(favoriteRequest);
+        return favoriteRequest;
     }
 }
