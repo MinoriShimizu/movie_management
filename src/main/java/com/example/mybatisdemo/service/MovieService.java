@@ -5,9 +5,12 @@ import com.example.mybatisdemo.model.Movie;
 
 import java.util.List;
 
+
 public interface MovieService {
 
     List<Movie> findAll();
+
+    Movie findByName(String name);
 
     Movie create(Movie movie);
 
