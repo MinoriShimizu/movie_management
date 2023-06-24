@@ -1,0 +1,14 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatisdemo.mapper.MovieMapper">
+    <resultMap id="findAll" type="com.example.mybatisdemo.model.Movie">
+        <id property="id" column="movie_id" />
+        <result property="category" column="category" />
+        <result property="name" column="name" />
+        <result property="director" column="director" />
+        <result property="released_at" column="released_at" />
+    </resultMap>
+
+    <select id="findAll" resultMap="findAll">
+        select * from movies
+    </select>
+</mapper>

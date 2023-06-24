@@ -9,13 +9,12 @@
     </resultMap>
 
     <select id="findAll" resultMap="findAll">
-        select * from movies
+        SELECT * FROM movies
     </select>
 
     <select id="findByName">
         SELECT * FROM movies WHERE name = #{name}
     </select>
-
 
     <insert id="create">
         INSERT INTO movies(
@@ -31,4 +30,32 @@
         #{released_at}
         )
     </insert>
+
+    <resultMap id="update" type="com.example.mybatisdemo.model.Movie">
+        <id property="id" column="movie_id" />
+        <result property="category" column="category" />
+        <result property="name" column="name" />
+        <result property="director" column="director" />
+        <result property="released_at" column="released_at" />
+    </resultMap>
+    <resultMap id="fovariteMap" type="com.example.mybatisdemo.model.Favorite">
+        <id property="movie_id" column="movie_id" />
+        <result property="movie_category" column="movie_category" />
+    </resultMap>
+
+    <update id="update">
+        UPDATE
+            movies
+            INNER JOIN
+                favorites
+            ON  movies.movie_id = favorites.movie_id
+            SET
+                category = #{category}
+        WHERE
+            movie_id = #{movie_id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM movies WHERE movie_id = #{movie_id}
+    </delete>
 </mapper>
