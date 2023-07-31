@@ -54,6 +54,7 @@
             #{comment})
     </insert>
 
+
     <update id="update">
         UPDATE favorites SET comment = #{comment} WHERE id = #{id}
     </update>
@@ -62,3 +63,5 @@
         DELETE FROM favorites WHERE id = #{id}
     </delete>
 </mapper>
+
+
