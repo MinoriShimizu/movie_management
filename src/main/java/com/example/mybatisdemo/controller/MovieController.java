@@ -38,6 +38,16 @@ public class MovieController {
 
     }
 
+    @PutMapping("/{id}")
+    public Movie updateMovies(@PathVariable("id") int id, @RequestBody Movie movie) {
+        return movieService.update(movie);
+    }
+
+    @DeleteMapping("/{id}")
+    public  Movie deleteMovie(@PathVariable("id") int id) {
+        return movieService.delete(id);
+    }
+
     @ExceptionHandler(value = MovieNotFoundException.class)
     public ResponseEntity<Map<String, String>> handleNoResourceFound(
             MovieNotFoundException e, HttpServletRequest request) {

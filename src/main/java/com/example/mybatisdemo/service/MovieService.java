@@ -14,5 +14,7 @@ public interface MovieService {
 
     Movie create(Movie movie);
 
-    //void update(int id, String name) throws Exception;
+    Movie update(Movie movie);
+
+    Movie delete(int id);
 }

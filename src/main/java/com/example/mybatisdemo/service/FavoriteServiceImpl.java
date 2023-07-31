@@ -33,4 +33,13 @@ public class FavoriteServiceImpl implements FavoriteService {
         favoriteMapper.create(favoriteRequest);
         return favoriteRequest;
     }
+
+    public FavoriteRequest update(FavoriteRequest favoriteRequest) {
+        favoriteMapper.update(favoriteRequest);
+        return favoriteRequest;
+    }
+
+    public Favorite delete(int id) {
+        return favoriteMapper.delete(id);
+    }
 }

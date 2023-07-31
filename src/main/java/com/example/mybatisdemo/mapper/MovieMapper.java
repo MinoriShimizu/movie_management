@@ -2,7 +2,7 @@ package com.example.mybatisdemo.mapper;
 
 import com.example.mybatisdemo.model.Movie;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -15,5 +15,9 @@ public interface MovieMapper {
     Optional<Movie> findByName(String name);
 
     void create(Movie movie);
+
+    void update(Movie movie);
+
+    Movie delete(int id);
 
 }

@@ -53,4 +53,15 @@
             #{watched_at},
             #{comment})
     </insert>
+
+
+    <update id="update">
+        UPDATE favorites SET comment = #{comment} WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM favorites WHERE id = #{id}
+    </delete>
 </mapper>
+
+

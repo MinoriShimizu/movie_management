@@ -9,4 +9,8 @@ public interface FavoriteService {
 
     Favorite findById(int id);
     FavoriteRequest create(FavoriteRequest favoriteRequest);
+
+    FavoriteRequest update(FavoriteRequest favoriteRequest);
+
+    Favorite delete (int id);
 }

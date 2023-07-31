@@ -33,4 +33,13 @@ public class MovieServiceImpl implements MovieService {
         movieMapper.create(movie);
         return movie;
     }
+
+    public Movie update(Movie movie){
+        movieMapper.update(movie);
+        return movie;
+    }
+
+    public Movie delete(int id) {
+        return movieMapper.delete(id);
+    }
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatisdemo.mapper.FavoriteMapper">
+    <resultMap id="findAll" type="com.example.mybatisdemo.model.Favorite">
+        <id property="id" column="id" />
+        <result property="watched_at" column="watched_at" />
+        <result property="comment" column="comment" />
+        <association property="movie" javaType="com.example.mybatisdemo.model.Movie">
+            <id property="id" column="movie_id" />
+            <result property="category" column="movie_category" />
+            <result property="name" column="movie_name" />
+        </association>
+    </resultMap>
+
+    <select id="findAll" resultMap="findAll">
+        SELECT
+            favorites.movie_id,
+            movies.category,
+            movies.name,
+            favorites.watched_at,
+            favorites.comment
+        FROM
+            favorites
+            INNER JOIN
+            movies
+               ON  favorites.movie_id = movies.movie_id
+    </select>
+</mapper>

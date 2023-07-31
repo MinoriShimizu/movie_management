@@ -14,4 +14,8 @@ public interface FavoriteMapper {
     Optional<Favorite> findById(int id);
 
     void create(FavoriteRequest favoriteRequest);
+
+    void update(FavoriteRequest favoriteRequest);
+
+    Favorite delete (int id);
 }

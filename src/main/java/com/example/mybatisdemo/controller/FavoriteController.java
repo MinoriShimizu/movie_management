@@ -31,10 +31,19 @@ public class FavoriteController {
         return favoriteService.findById(id);
     }
 
-
     @PostMapping
     public FavoriteRequest createFavorites(@RequestBody FavoriteRequest favoriteRequest) {
         return favoriteService.create(favoriteRequest);
+    }
+
+    @PutMapping("/{id}")
+    public FavoriteRequest updateFavorites(@PathVariable("id") int id, @RequestBody FavoriteRequest favoriteRequest) {
+        return favoriteService.update(favoriteRequest);
+    }
+
+    @DeleteMapping("/{id}")
+    public Favorite deleteFavorite(@PathVariable("id") int id) {
+        return favoriteService.delete(id);
     }
 
     @ExceptionHandler(value = FavoriteNotFoundException.class)
